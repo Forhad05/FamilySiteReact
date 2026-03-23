@@ -1,0 +1,58 @@
+/* contact section - start */
+.section--contact {
+  --color-heading: 0, 0, 0;
+  --color-body: 0, 0, 0;
+  --color-background: 215, 235, 255;
+  --color-field-background: 255, 255, 255;
+  --color-field-text: 178, 178, 178;
+  --color-field-border: 178, 178, 178;
+  --color-shadow: 0, 0, 0;
+
+  .section--contact-box {
+    background-color: rgb(var(--color-background));
+    padding-block: 5rem 10rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: 1px 1px 4px 0px rgba(var(--color-body), 0.1);
+  }
+
+  .section--contact-body {
+    --flex-col-gap: 8rem;
+    --flex-row-gap: 3rem;
+    --flex-col-fixed: 57rem;
+    align-items: center;
+  }
+
+  .field {
+    border-width: 0;
+  }
+
+  .field-group-list {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+
+    &>*+.field-group-button {
+      margin-top: 1.5rem;
+    }
+
+    &>*+.field-group-message {
+      margin-top: 3rem;
+    }
+  }
+
+  @media screen and (width < 1025px) {
+    .section--contact-box {
+      padding-block: 3rem;
+    }
+
+    .section--contact-body {
+      --flex-col-gap: 5rem;
+    }
+  }
+}
+
+/* contact section - end */

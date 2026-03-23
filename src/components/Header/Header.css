@@ -1,0 +1,112 @@
+/* header */
+.section__header {
+  --color-link: 0, 0, 0;
+  --color-link-active: 80, 114, 167;
+  --section-header-gaps: 1rem;
+  --section-header-nav-gaps: 1.3rem;
+  --section-header-padding-y: 2.5rem;
+
+  @media screen and (width >=1025px) {
+    --section-header-nav-gaps: 2rem;
+  }
+
+  @media screen and (width >=1440px) {
+    --section-header-nav-gaps: 4rem;
+  }
+
+  @media screen and (width < 1025px) {
+    --section-header-padding-y: 1.5rem;
+  }
+
+  & {
+    display: block;
+    position: sticky;
+    z-index: 100;
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 2px 4px rgba(var(--color-body), 0.1);
+    transition: top .15s ease-out;
+  }
+
+  &.shopify-section-header-sticky {
+    top: 0;
+  }
+
+  &.shopify-section-header-hidden {
+    top: calc(-1 * var(--header-height));
+  }
+
+  .header-wrapper {
+    display: block;
+    padding-block: var(--section-header-padding-y);
+  }
+
+  .header {
+    display: grid;
+    align-items: center;
+    gap: var(--section-header-gaps);
+    grid-template-areas: "logo nav icons";
+    grid-template-columns: minmax(auto, 1fr) 3fr minmax(auto, 1fr);
+  }
+
+  .header-drawer {
+    grid-area: drawer;
+  }
+
+  .header-logo {
+    grid-area: logo;
+  }
+
+  .header-logo--link {
+    display: inline-flex;
+  }
+
+  .navigation-inline {
+    grid-area: nav;
+    text-align: center;
+    align-content: center;
+  }
+
+  .header-icons {
+    grid-area: icons;
+    align-content: center;
+  }
+
+  .navigation-links--list {
+    display: inline-flex;
+    gap: var(--section-header-nav-gaps);
+  }
+
+  .header-icons--list {
+    display: flex;
+    gap: var(--section-header-gaps);
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(var(--color-link));
+
+    &.active {
+      color: rgb(var(--color-link-active));
+    }
+  }
+
+  .header-icon {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (width < 1025px) {
+    .header {
+      grid-template-areas: "drawer logo icons";
+      grid-template-columns: minmax(auto, 1fr) auto minmax(auto, 1fr);
+    }
+
+    .header-logo--image {
+      max-width: 110px;
+    }
+  }
+}
